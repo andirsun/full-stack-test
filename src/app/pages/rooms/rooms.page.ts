@@ -12,8 +12,9 @@ import { IRoom } from 'src/app/tab1/domain/responses.interface';
   styleUrls: ['./rooms.page.scss'],
 })
 export class RoomsPage implements OnInit {
-
-  rooms: unknown;
+  // Properties
+  rooms: IRoom[] = [];
+  
   constructor(
     private router : Router,
     private location : Location,
@@ -21,12 +22,12 @@ export class RoomsPage implements OnInit {
 
   ngOnInit() {
     this.rooms = this.location.getState()["rooms"];
-
-    console.log(this.rooms);
   }
 
   roomDetails(room : IRoom){
-    console.log(room);
+    // Navigate to room detail page
+    this.router.navigateByUrl('/room-detail',{state :{room : room}})
   }
+  
 
 }

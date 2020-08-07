@@ -1,9 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>room-detail</ion-title>
+    <ion-title>Habitacion Numero {{room.number}} - {{room.type}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col size="12" size-xl="6" offset-xl="3" class="ion-text-center">
+        <img src={{room.urlImg}} alt="" style="height: 300px;">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-xl="6" offset-xl="3">
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Servicios Incluidos</ion-label>
+            <ion-button>See All</ion-button>
+          </ion-list-header>
+          <ion-item *ngFor="let service of room.services">
+            <ion-label>{{service.description}}</ion-label>
+          </ion-item>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-xl="6" offset-xl="3">
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Servicios Adicionales</ion-label>
+            <ion-button>See All</ion-button>
+          </ion-list-header>
+          <ion-item *ngFor="let aditional of room.aditionals">
+            <ion-label>{{aditional.description}}</ion-label>
+            + {{aditional.price}}
+            <ion-checkbox slot="end" (ionChange)="addAditionalService(aditional,$event)"></ion-checkbox>
+          </ion-item>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-xl="6" offset-xl="3">
+        <ion-button (click)="addToCheckout()" expand="block">
+          <ion-icon slot="start" name="arrow-forward-outline"></ion-icon>
+          Checkout
+          {{roomToBuy.price}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
