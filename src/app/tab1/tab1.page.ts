@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HotelsService } from './application/hotels.service';
 import { IHotel } from "./domain/responses.interface";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -12,6 +13,7 @@ export class Tab1Page {
   hotels : IHotel[] = []
   constructor(
     private hotelsService : HotelsService,
+    private router: Router
   ) {
     this.fetchInfo();
   }
@@ -20,7 +22,6 @@ export class Tab1Page {
     this.hotelsService.getHotels()
       .subscribe(response =>{
         this.hotels= response.content.hotels;
-        console.log(this.hotels);
       },error =>{
         console.log(error);
       });
@@ -28,6 +29,7 @@ export class Tab1Page {
 
   showRooms(rooms){
     console.log(rooms);
+    this.router.navigateByUrl('/rooms',{state :{rooms : rooms}})
   }
   
 
