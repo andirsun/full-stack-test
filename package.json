@@ -1,8 +1,8 @@
 {
   "name": "tocoma-app",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "version": "1.0.0",
+  "author": "Anderson Laverde Gracia",
+  "homepage": "https://tocoma-5e438.web.app",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
