@@ -18,7 +18,7 @@ export interface IRoom {
   number : string,
   description : string,
   price : number
-  type : "SINGLE", "DOUBLE", "SUITE";
+  type : "SINGLE" | "DOUBLE" | "SUITE";
   urlImg : string,
   services : [IService],
   aditionals : [IAditional]
@@ -32,6 +32,7 @@ export interface IService {
 export interface IAditional {
   _id : string,
   price : number,
-  description : string
+  description : string,
+  include : false,
 
 }
