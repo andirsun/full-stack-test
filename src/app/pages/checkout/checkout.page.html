@@ -1,9 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>checkout</ion-title>
+    <ion-title>Resumen</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col size="12"  class="ion-text-center">
+        <img src={{room.urlImg}} alt="" style="height: 300px;">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Servicios Incluidos</ion-label>
+            <ion-button>See All</ion-button>
+          </ion-list-header>
+          <ion-item *ngFor="let service of room.services">
+            <ion-label>{{service.description}}</ion-label>
+          </ion-item>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" >
+        <ion-list>
+          <ion-list-header>
+            <ion-label>Servicios Adicionales</ion-label>
+            <ion-button>See All</ion-button>
+          </ion-list-header>
+          <ion-item *ngFor="let aditional of aditionals">
+            <ion-label>{{aditional.description}}</ion-label>
+            + {{aditional.price}}
+            <ion-checkbox slot="end" disabled="true" checked></ion-checkbox>
+          </ion-item>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" >
+        <ion-button (click)="reservation()" color="success" expand="block">
+          <ion-icon slot="start" name="card-outline"></ion-icon>
+          Reservar
+          {{room.price}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
