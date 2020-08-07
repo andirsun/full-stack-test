@@ -1,6 +1,6 @@
 {
-  "appId": "com.tocoma.tocoma",
-  "appName": "tocoma",
+  "appId": "io.ionic.starter",
+  "appName": "tocoma-app",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

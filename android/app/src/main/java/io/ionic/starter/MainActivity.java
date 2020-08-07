@@ -1,4 +1,4 @@
-package com.tocoma.tocoma;
+package io.ionic.starter;
 
 import android.os.Bundle;
 
