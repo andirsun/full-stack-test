@@ -1,5 +1,7 @@
 {
-  "name": "full-stack-test",
-  "integrations": {},
+  "name": "tocoma-app",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
