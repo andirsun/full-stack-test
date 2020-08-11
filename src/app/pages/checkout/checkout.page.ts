@@ -58,5 +58,7 @@ export class CheckoutPage implements OnInit {
       })
   }
 
+  
+
 
 }
