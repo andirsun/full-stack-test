@@ -32,7 +32,7 @@ export class ReservationService {
       date : "2020-08-06",
       name : "Anderson Laverde",
       document : "1143879488", 
-      totalPrice : 320000,
+      totalPrice : room.price,
       checkIn : "2020-09-06",
       checkOut : "2020-09-10",
       days : 4,
