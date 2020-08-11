@@ -1,4 +1,4 @@
 export const environment = {
-  url : "https://us-central1-timugo-api.cloudfunctions.net/apitocoma",
+  url : "https://tocoma.herokuapp.com",
   production: true
 };
